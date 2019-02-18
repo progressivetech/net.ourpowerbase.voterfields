@@ -38,24 +38,47 @@ function voterfields_civicrm_install() {
 function voterfields_civicrm_postInstall() {
   _voterfields_civix_civicrm_postInstall();
 
-  // Via managed entities, we create a group of custom fields which includes
-  // party registration. This field is multiple choice and requires an option
-  // group.
-  // Managed entities also create the option group. However, we can't assign the
-  // option group to the custom field via managed entities so we do that below. 
+  // Via managed entities, we create a group of custom fields. Some of the fields
+  // are radio fields that have options, so we ask managed entities to create
+  // those options. 
+  //
+  // However, managed entities cannot assign each custom field to the
+  // appropriate option group so we do that manually here.
 
-  // Get the option group id.
-  $params = array('name' => 'voterfields_political_parties');
+  $pairs = array(
+    'party_registration' => 'political_parties',
+    'elected_office' => 'elected_offices',
+    'elected_staffer_role' => 'elected_staffer_roles',
+  );
+
+  foreach($pairs as $field => $option_group) {
+    $field_name = 'voterfields_' . $field;
+    $option_group_name = 'voterfields_' . $option_group;
+    voterfields_assign_option_group_to_custom_field($field_name, $option_group_name); 
+  }
+
+}
+
+/**
+ * Assign option groups to fields
+ *
+ * @param string $field_name 
+ *   string name of the field
+ * @param string $option_group_name
+ *   string name of option group
+ *
+ **/
+function voterfields_assign_option_group_to_custom_field($field_name, $option_group_name) {
+  $params = array('name' => $option_group_name);
   $option_group = civicrm_api3('option_group', 'getsingle', $params);
 
   // Get the custom field.
-  $params = array('name' => 'voterfields_party_registration');
+  $params = array('name' => $field_name);
   $field = civicrm_api3('custom_field', 'getsingle', $params); 
 
   // Update the custom field.
   $field['option_group_id'] = $option_group['id'];
   civicrm_api3('custom_field', 'create', $field);
-
 }
 
 /**

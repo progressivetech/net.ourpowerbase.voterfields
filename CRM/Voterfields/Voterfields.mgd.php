@@ -3,13 +3,25 @@
 // Create our custom group and fields
 return array(
   0 => array(		
+    'entity' => 'ContactType',
+    'name' => 'voterfields_elected_official',
+    'update' => 'never',
+    'params' => array(
+      'version' => 3,
+      'name' => 'voterfields_elected_official',
+      'label' => 'Elected Official',
+      'parent_id' => '1',
+      'is_active' => '1',
+    ),
+  ),
+  1 => array(		
     'entity' => 'CustomGroup',
-    'name' => 'Voter_Info',
+    'name' => 'voterfields_voter_info',
     'update' => 'never',
     'params' => array(
       'version' => 3,
       'is_active' => 1,
-      'name' => 'Voter_Info',
+      'name' => 'voterfields_voter_info',
       'title' => 'Voter Info',
       'extends' => 'Individual',
       'style' => 'Tab',
@@ -247,7 +259,7 @@ return array(
       )
     )
   ),
-  1 => array(		
+  2 => array(		
     'entity' => 'OptionGroup',
     'name' => 'voterfields_political_parties',
     'update' => 'never',
@@ -345,5 +357,189 @@ return array(
          )
       )
     )
-  )
+  ),
+  3 => array(
+    'entity' => 'OptionGroup',
+    'name' => 'voterfields_elected_offices',
+    'update' => 'never',
+    'params' => array(
+      'version' => 3,
+      'is_active' => 1,
+      'name' => 'voterfields_elected_offices',
+      'title' => 'Elected Offices',
+      'is_reserved' => '0',
+      'is_active' => '1',
+      'is_locked' => '0',
+      'api.option_value.create' => array(
+         array(
+          'option_group_id' => '$value.id',
+          'label' => 'City Council',
+          'value' => '1',
+          'name' => 'city_council',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '1',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+        ),
+        array(
+          'option_group_id' => '$value.id',
+          'label' => 'State Assembly',
+          'value' => '2',
+          'name' => 'state_assembly',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '2',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+         ),
+         array(
+          'option_group_id' => '$value.id',
+          'label' => 'State Senate',
+          'value' => '3',
+          'name' => 'state_senate',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '2',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+         ),
+       ),
+     ),
+   ),
+   4 => array(
+    'entity' => 'OptionGroup',
+    'name' => 'voterfields_elected_staffer_roles',
+    'update' => 'never',
+    'params' => array(
+      'version' => 3,
+      'is_active' => 1,
+      'name' => 'voterfields_elected_staffer_roles',
+      'title' => 'Elected Staffer Roles',
+      'is_reserved' => '0',
+      'is_active' => '1',
+      'is_locked' => '0',
+      'api.option_value.create' => array(
+         array(
+          'option_group_id' => '$value.id',
+          'label' => 'Chief of Staff',
+          'value' => '1',
+          'name' => 'chief_of_staff',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '1',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+        ),
+        array(
+          'option_group_id' => '$value.id',
+          'label' => 'Legislative Director',
+          'value' => '2',
+          'name' => 'legislative_director',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '2',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+         ),
+         array(
+          'option_group_id' => '$value.id',
+          'label' => 'Scheduler',
+          'value' => '3',
+          'name' => 'scheduler',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '3',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+         ),
+         array(
+          'option_group_id' => '$value.id',
+          'label' => 'Upper Level Staff',
+          'value' => '4',
+          'name' => 'upper_level_staff',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '4',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+        ),
+        array(
+          'option_group_id' => '$value.id',
+          'label' => 'Lower Level Staff',
+          'value' => '5',
+          'name' => 'lower_level_staff',
+          'filter' => '0',
+          'is_default' => '0',
+          'weight' => '5',
+          'is_optgroup' => '0',
+          'is_reserved' => '0',
+          'is_active' => '1'
+        ),
+      ),
+    ),
+  ),
+  5 => array(
+    'entity' => 'CustomGroup',
+    'name' => 'voterfields_elected_official_info',
+    'update' => 'never',
+    'params' => array(
+      'version' => 3,
+      'is_active' => 1,
+      'name' => 'voterfields_elected_official_info',
+      'title' => 'Elected Official',
+      'extends' => 'Individual',
+      'extends_entity_column_value' => 'voterfields_elected_official',
+      'style' => 'inline',
+      'collapse_display' => '0',
+      'is_active' => '1',
+      'is_multiple' => '0',
+      'collapse_adv_display' => '0',
+      'is_reserved' => '0',
+      'is_public' => '1',
+      'api.custom_field.create' => array(
+       array(
+          'custom_group_id' => '$value.id',
+          'name' => 'voterfields_elected_office',
+          'label' => 'Elected Office',
+          'data_type' => 'String',
+          'html_type' => 'Radio',
+          'is_required' => '0',
+          'is_searchable' => '0',
+          'is_search_range' => '0',
+          'weight' => '10',
+          'is_active' => '1',
+          'is_view' => '0',
+          'text_length' => '255',
+          'note_columns' => '60',
+          'note_rows' => '4',
+          'in_selector' => '0',
+        ),
+        array(
+          'custom_group_id' => '$value.id',
+          'name' => 'voterfields_elected_staffer_role',
+          'label' => 'Elected Staffer Role',
+          'data_type' => 'String',
+          'html_type' => 'Radio',
+          'is_required' => '0',
+          'is_searchable' => '0',
+          'is_search_range' => '0',
+          'weight' => '10',
+          'is_active' => '1',
+          'is_view' => '0',
+          'text_length' => '255',
+          'note_columns' => '60',
+          'note_rows' => '4',
+          'in_selector' => '0',
+        ),
+      )
+    )
+  ),
 );
