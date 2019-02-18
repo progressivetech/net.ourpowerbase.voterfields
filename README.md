@@ -1,44 +1,14 @@
-# net.ourpowerbase.voterfields
+# Voter Fields 
 
 ![Screenshot](/images/screenshot.png)
 
-(*FIXME: In one or two paragraphs, describe what the extension does and why one would download it. *)
+Voter fields is a simple extension that creates a group of custom fields useful
+for organizing with US election data.
+
+Warning: If you install this extension, add data to the custom fields created,
+and then uninstall this extension, it will delete the data you added to the
+custom fields.
 
 The extension is licensed under [AGPL-3.0](LICENSE.txt).
 
-## Requirements
 
-* PHP v5.4+
-* CiviCRM (*FIXME: Version number*)
-
-## Installation (Web UI)
-
-This extension has not yet been published for installation via the web UI.
-
-## Installation (CLI, Zip)
-
-Sysadmins and developers may download the `.zip` file for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-cd <extension-dir>
-cv dl net.ourpowerbase.voterfields@https://github.com/FIXME/net.ourpowerbase.voterfields/archive/master.zip
-```
-
-## Installation (CLI, Git)
-
-Sysadmins and developers may clone the [Git](https://en.wikipedia.org/wiki/Git) repo for this extension and
-install it with the command-line tool [cv](https://github.com/civicrm/cv).
-
-```bash
-git clone https://github.com/FIXME/net.ourpowerbase.voterfields.git
-cv en voterfields
-```
-
-## Usage
-
-(* FIXME: Where would a new user navigate to get started? What changes would they see? *)
-
-## Known Issues
-
-(* FIXME *)
