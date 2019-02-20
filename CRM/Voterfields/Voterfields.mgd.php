@@ -261,12 +261,12 @@ return array(
   ),
   2 => array(		
     'entity' => 'OptionGroup',
-    'name' => 'voterfields_political_parties',
+    'name' => 'voterfields_political_party_values',
     'update' => 'never',
     'params' => array(
       'version' => 3,
       'is_active' => 1,
-      'name' => 'voterfields_political_parties',
+      'name' => 'voterfields_political_party_values',
       'title' => 'Political Parties',
       'is_reserved' => '0',
       'is_active' => '1',
@@ -360,12 +360,12 @@ return array(
   ),
   3 => array(
     'entity' => 'OptionGroup',
-    'name' => 'voterfields_elected_offices',
+    'name' => 'voterfields_elected_office_values',
     'update' => 'never',
     'params' => array(
       'version' => 3,
       'is_active' => 1,
-      'name' => 'voterfields_elected_offices',
+      'name' => 'voterfields_elected_office_values',
       'title' => 'Elected Offices',
       'is_reserved' => '0',
       'is_active' => '1',
@@ -412,12 +412,12 @@ return array(
    ),
    4 => array(
     'entity' => 'OptionGroup',
-    'name' => 'voterfields_elected_staffer_roles',
+    'name' => 'voterfields_elected_staffer_role_values',
     'update' => 'never',
     'params' => array(
       'version' => 3,
       'is_active' => 1,
-      'name' => 'voterfields_elected_staffer_roles',
+      'name' => 'voterfields_elected_staffer_role_values',
       'title' => 'Elected Staffer Roles',
       'is_reserved' => '0',
       'is_active' => '1',

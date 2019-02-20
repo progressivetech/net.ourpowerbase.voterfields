@@ -46,9 +46,9 @@ function voterfields_civicrm_postInstall() {
   // appropriate option group so we do that manually here.
 
   $pairs = array(
-    'party_registration' => 'political_parties',
-    'elected_office' => 'elected_offices',
-    'elected_staffer_role' => 'elected_staffer_roles',
+    'party_registration' => 'political_party_values',
+    'elected_office' => 'elected_office_values',
+    'elected_staffer_role' => 'elected_staffer_role_values',
   );
 
   foreach($pairs as $field => $option_group) {
