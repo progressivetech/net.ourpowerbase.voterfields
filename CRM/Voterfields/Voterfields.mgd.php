@@ -132,7 +132,6 @@ return array(
           'is_active' => '1',
           'is_view' => '0',
           'text_length' => '255',
-          'date_format' => 'Array',
           'note_columns' => '60',
           'note_rows' => '4',
           'in_selector' => '0'
