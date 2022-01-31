@@ -25,7 +25,7 @@ return array(
       'title' => 'Voter Info',
       'extends' => 'Individual',
       'style' => 'Tab',
-      'collapse_display' => '1',
+      'collapse_display' => '0',
       'weight' => '23',
       'is_active' => '1',
       'is_multiple' => '0',
