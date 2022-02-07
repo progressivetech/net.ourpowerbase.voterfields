@@ -78,6 +78,13 @@ function voterfields_assign_option_group_to_custom_field($field_name, $option_gr
 
   // Update the custom field.
   $field['option_group_id'] = $option_group['id'];
+
+  // Avoid serialize bug in api3
+  if (array_key_exists('serialize', $field)) {
+    if ($field['serialize'] == '0') {
+      $field['serialize'] = '';
+    }
+  }
   civicrm_api3('custom_field', 'create', $field);
 }
 
